@@ -22,6 +22,9 @@ This repository contains the deployment of my personal portfolio website using G
 
 ## 🚀 Deployment Steps
 
+![Static Portfolio Website Architecture on Google Cloud - visual selection (1)](https://github.com/user-attachments/assets/f063f342-955e-41ce-a24d-3e20b3f2d1b9)
+
+
 ### 1. Upload Files to Cloud Storage
 - Create a bucket (e.g., `my-portfolio-bucket`)
 - Set it to **Static Website Hosting**
@@ -63,3 +66,6 @@ Enable HTTP request logging for load balancer:
 - Use this filter:
 ```lql
 resource.type="http_load_balancer"
+
+![Static Portfolio Website Architecture on Google Cloud - visual selection (2)](https://github.com/user-attachments/assets/d71487d6-355c-4e2a-8f7e-f4e45d660b63)
+
