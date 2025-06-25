@@ -1,4 +1,4 @@
-# 🌐 Portfolio Website on Google Cloud Platform (GCP)
+# 🌐 Portfolio Website on Google Cloud Platform (GCP) [link: http://34.36.146.142/]
 
 This repository contains the deployment of my personal portfolio website using Google Cloud services. It showcases how to serve a static website with logging, analytics, and performance optimization through Cloud CDN.
 
@@ -12,9 +12,16 @@ This repository contains the deployment of my personal portfolio website using G
 **Services Used:**
 
 1. **Cloud Storage** – Hosts static HTML, CSS, JS files.
+   https://storage.googleapis.com/my-portfolio-01/code.html
 2. **Cloud CDN** – Caches website content at edge locations for faster delivery.
+   ![image](https://github.com/user-attachments/assets/c34e5174-18ec-47b7-b8c1-781813f77f0c)
+
 3. **Load Balancer** – Routes traffic to the Cloud Storage bucket through a backend bucket.
+   ![image](https://github.com/user-attachments/assets/e4d92b55-fefd-4701-8897-a8a333e39076)
+
 4. **Google Analytics / Tag Manager** – Tracks visitor data and interactions.
+   ![image](https://github.com/user-attachments/assets/e78dbc88-3dc2-496a-b6f5-010aa3be074f)
+
 
 > Note: Cloud Functions were excluded since no contact form or server-side logic is required.
 
