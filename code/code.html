@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keshav Verma | MERN Stack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #3b82f6;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .skill-pill {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-pill:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: var(--accent);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .contact-card {
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .section-divider {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, #2563eb, #fff 60%, #2563eb);
+            opacity: 0.15;
+            margin: 48px 0 32px 0;
+            border-radius: 1px;
+        }
+        .scroll-to-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            background: #2563eb;
+            color: #fff;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(37,99,235,0.15);
+            cursor: pointer;
+            z-index: 100;
+            font-size: 1.5rem;
+            transition: background 0.2s;
+        }
+        .scroll-to-top:hover {
+            background: #1e40af;
+        }
+        .section-heading {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.25em;
+        }
+        .section-heading::after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            border-radius: 2px;
+            margin: 0.25em auto 0 auto;
+            opacity: 0.5;
+        }
+        .project-card, .contact-card {
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .project-card:hover, .contact-card:hover {
+            box-shadow: 0 10px 32px -8px #2563eb33, 0 2px 8px -2px #2563eb22;
+            transform: translateY(-4px) scale(1.02);
+        }
+        .nav-link {
+            transition: color 0.2s;
+        }
+        .nav-link.active, .nav-link:hover {
+            color: #2563eb !important;
+        }
+        .bg-section {
+            background: linear-gradient(135deg, #f0f6ff 60%, #fff 100%);
+        }
+        .footer-gradient {
+            background: linear-gradient(90deg, #1e293b 60%, #2563eb 100%);
+        }
+    </style>
+
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQJ3QL4Y8G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QQJ3QL4Y8G');
+</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-darkgray-600" style="color:#0f172a; opacity: 0.8;">KV</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-700 hover:text-blue-600">Home</a>
+                <a href="#about" class="nav-link text-gray-700 hover:text-blue-600">About</a>
+                <a href="#skills" class="nav-link text-gray-700 hover:text-blue-600">Skills</a>
+                <a href="#projects" class="nav-link text-gray-700 hover:text-blue-600">Projects</a>
+                <a href="#experience" class="nav-link text-gray-700 hover:text-blue-600">Experience</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600">Contact</a>
+            </div>
+            <button class="md:hidden text-gray-700" id="menu-toggle">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full py-2 px-4 shadow-lg" id="mobile-menu">
+            <a href="#home" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
+            <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600">About</a>
+            <a href="#skills" class="block py-2 text-gray-700 hover:text-blue-600">Skills</a>
+            <a href="#projects" class="block py-2 text-gray-700 hover:text-blue-600">Projects</a>
+            <a href="#experience" class="block py-2 text-gray-700 hover:text-blue-600">Experience</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-24 pb-16 md:pt-32 md:pb-24 text-white">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0 animate-fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Keshav Verma</h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6">MERN Stack Developer</h2>
+                <p class="text-lg mb-8">I build innovative web solutions with cutting-edge technologies to solve real-world problems.</p>
+                <div class="flex space-x-4">
+                    <a href="#projects" class="bg-white text-blue-600 px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition">View Work</a>
+                    <a href="#contact" class="border-2 border-white text-white px-6 py-2 rounded-lg font-medium hover:bg-white hover:text-blue-600 transition">Contact Me</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center animate-fade-in">
+                <div class="w-64 h-64 md:w-80 md:h-80 bg-white rounded-full shadow-2xl flex items-center justify-center overflow-hidden">
+                    <img src="PngItem_1127587.png" alt="Profile" class="w-full h-full object-cover" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-section">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 section-heading">About Me</h2>
+            <div class="section-divider"></div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="w-48 h-48 bg-gray-100 rounded-full shadow-lg overflow-hidden">
+                        <img src="WhatsApp Image 2025-06-23 at 16.22.02_19d2c4be.jpg" alt="About Profile" class="w-full h-full object-cover" style="object-position: center 40%;" />
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <p class="text-lg text-gray-700 mb-6">
+                        I'm Keshav Verma, a passionate MERN Stack Developer currently pursuing my Bachelor of Technology at Vidyalankar Institute of Technology, Mumbai. I specialize in building full-stack web applications using modern technologies.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6">
+                        My objective is to leverage my technical expertise in development to create innovative solutions and contribute to the success of dynamic teams. I thrive in collaborative environments and enjoy tackling complex problems.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-blue-600 mr-2"></i>
+                            <span>keshavkamalverma@gmail.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-blue-600 mr-2"></i>
+                            <span>+91 7028856675</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>
+                            <span>Mumbai, Maharashtra</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 section-heading">Technical Skills</h2>
+            <div class="section-divider"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Hard Skills -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl border border-blue-100 flex flex-col items-center">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800 flex items-center gap-2">
+                        <i class="fas fa-laptop-code text-blue-500"></i> Hard Skills
+                    </h3>
+                    <div class="flex flex-wrap gap-3 justify-center">
+                        <span class="skill-pill bg-blue-50 px-4 py-2 rounded-full text-blue-700 font-semibold flex items-center gap-2"><i class="fas fa-database"></i> MongoDB</span>
+                        <span class="skill-pill bg-blue-50 px-4 py-2 rounded-full text-blue-700 font-semibold flex items-center gap-2"><i class="fab fa-node-js"></i> Express JS</span>
+                        <span class="skill-pill bg-blue-50 px-4 py-2 rounded-full text-blue-700 font-semibold flex items-center gap-2"><i class="fab fa-react"></i> React JS</span>
+                        <span class="skill-pill bg-blue-50 px-4 py-2 rounded-full text-blue-700 font-semibold flex items-center gap-2"><i class="fab fa-node-js"></i> Node JS</span>
+                        <span class="skill-pill bg-blue-50 px-4 py-2 rounded-full text-blue-700 font-semibold flex items-center gap-2"><i class="fas fa-coffee"></i> Java Programming</span>
+                        <span class="skill-pill bg-blue-50 px-4 py-2 rounded-full text-blue-700 font-semibold flex items-center gap-2"><i class="fas fa-layer-group"></i> Full Stack Web Development</span>
+                        <span class="skill-pill bg-blue-50 px-4 py-2 rounded-full text-blue-700 font-semibold flex items-center gap-2"><i class="fab fa-html5"></i> HTML/CSS/JavaScript</span>
+                    </div>
+                </div>
+                <!-- Soft Skills -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl border border-blue-100 flex flex-col items-center">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800 flex items-center gap-2">
+                        <i class="fas fa-user-friends text-blue-500"></i> Soft Skills
+                    </h3>
+                    <div class="flex flex-wrap gap-3 justify-center">
+                        <span class="skill-pill bg-green-50 px-4 py-2 rounded-full text-green-700 font-semibold flex items-center gap-2"><i class="fas fa-comments"></i> Effective Communication</span>
+                        <span class="skill-pill bg-green-50 px-4 py-2 rounded-full text-green-700 font-semibold flex items-center gap-2"><i class="fas fa-user-tie"></i> Leadership</span>
+                        <span class="skill-pill bg-green-50 px-4 py-2 rounded-full text-green-700 font-semibold flex items-center gap-2"><i class="fas fa-users"></i> Team Collaboration</span>
+                        <span class="skill-pill bg-green-50 px-4 py-2 rounded-full text-green-700 font-semibold flex items-center gap-2"><i class="fas fa-lightbulb"></i> Problem Solving</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Certifications -->
+            <div class="bg-white p-8 rounded-2xl shadow-xl border border-blue-100 flex flex-col items-center">
+                <h3 class="text-xl font-semibold mb-4 text-gray-800 flex items-center gap-2">
+                    <i class="fas fa-certificate text-yellow-500"></i> Certifications
+                </h3>
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <span class="inline-flex items-center gap-2 bg-yellow-50 text-yellow-800 px-4 py-2 rounded-full font-medium shadow"><i class="fas fa-certificate"></i> Certified Java Programmer (Oracle)</span>
+                    <span class="inline-flex items-center gap-2 bg-yellow-50 text-yellow-800 px-4 py-2 rounded-full font-medium shadow"><i class="fas fa-certificate"></i> Introduction to Artificial Intelligence (Coursera)</span>
+                    <span class="inline-flex items-center gap-2 bg-yellow-50 text-yellow-800 px-4 py-2 rounded-full font-medium shadow"><i class="fas fa-certificate"></i> Web Development (Apna College)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 section-heading">Featured Projects</h2>
+            <div class="section-divider"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- PMSSS Website -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-laptop-code text-5xl text-gray-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">PMSSS Website</h3>
+                        <p class="text-gray-600 mb-4">A full-stack government scholarship website developed during SIH hackathon with Node.js, MongoDB, and cloud technologies.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Node.js</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Cloud</span>
+                        </div>
+                        <a href="https://github.com/Keshav-Verma-06/SIH_majorProject" target="_blank" class="text-blue-600 font-medium hover:underline inline-flex items-center">
+                            View Code <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Airbnb Clone -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-home text-5xl text-gray-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Airbnb Clone</h3>
+                        <p class="text-gray-600 mb-4">A full-stack Airbnb-like website developed with Node.js backend, MongoDB database, and React frontend.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">React</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Node.js</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
+                        </div>
+                        <a href="https://github.com/Keshav-Verma-06/airbnb_majorProj" target="_blank" class="text-blue-600 font-medium hover:underline inline-flex items-center">
+                            View Code <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Games Collection -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-gamepad text-5xl text-gray-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Games Collection</h3>
+                        <p class="text-gray-600 mb-4">A collection of classic games built with HTML, CSS, and JavaScript, including Tic-Tac-Toe and Snake Game.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">HTML</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">CSS</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
+                        </div>
+                        <div class="space-y-2">
+                            <a href="https://keshav-verma-06.github.io/TicTacToe/" target="_blank" class="block text-blue-600 font-medium hover:underline inline-flex items-center">
+                                Tic-Tac-Toe <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+                            </a>
+                            <a href="https://keshav-verma-06.github.io/SnakeGame/" target="_blank" class="block text-blue-600 font-medium hover:underline inline-flex items-center">
+                                Snake Game <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-section">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 section-heading">Education & Experience</h2>
+            <div class="section-divider"></div>
+            <div class="max-w-3xl mx-auto">
+                <!-- Education -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800">Education</h3>
+                    <p class="text-gray-600">Bachelor of Technology, Vidyalankar Institute of Technology, Mumbai</p>
+                    <p class="text-gray-600">Pursuing Degree</p>
+                </div>
+                
+                <!-- Experience -->
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800">Experience</h3>
+                    <p class="text-gray-600">Participated in SIH Hackathon, developed a full-stack website according to our problem statement, collaborated with a team, and learned many new skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 section-heading">Contact Details</h2>
+            <div class="section-divider"></div>
+            <div class="flex flex-col items-center">
+                <div class="contact-card bg-white p-8 rounded-2xl shadow-2xl mb-4 border border-blue-100 max-w-md w-full">
+                    <div class="flex flex-col items-center mb-6">
+                        <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-blue-200 mb-4">
+                            <img src="WhatsApp Image 2025-06-23 at 16.22.02_19d2c4be.jpg" alt="Contact Avatar" class="w-full h-full object-cover" style="object-position: center 40%;" />
+                        </div>
+                        <h3 class="text-2xl font-semibold text-gray-800">Keshav Verma</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-blue-600 text-lg"></i>
+                            <a href="mailto:keshavkamalverma@gmail.com" class="text-gray-700 hover:text-blue-700 transition font-medium">keshavkamalverma@gmail.com</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-phone text-blue-600 text-lg"></i>
+                            <a href="tel:+917028856675" class="text-gray-700 hover:text-blue-700 transition font-medium">+91 7028856675</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-map-marker-alt text-blue-600 text-lg"></i>
+                            <span class="text-gray-700 font-medium">Mumbai, Maharashtra</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 footer-gradient text-white text-center text-sm">
+        <p>&copy; 2023 Keshav Verma. All rights reserved.</p>
+    </footer>
+
+    <button id="scrollToTopBtn" class="scroll-to-top" title="Back to top" style="display:none;"><i class="fas fa-arrow-up"></i></button>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Scroll to top button
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'flex';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Add external link icon and open in new tab for all external links
+        document.querySelectorAll('a[href^="http"]').forEach(link => {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+            if (!link.innerHTML.includes('fa-external-link-alt')) {
+                link.innerHTML += ' <i class="fas fa-external-link-alt text-xs ml-1"></i>';
+            }
+        });
+    </script>
+</body>
+</html>
