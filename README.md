@@ -55,7 +55,8 @@ This repository contains the deployment of my personal portfolio website using G
 - Choose your load balancer
 - Enter `/*` in **Path** to purge all cached content
 
----
+![image](https://github.com/user-attachments/assets/5c768a6e-f9fc-4880-b594-5ee520543617)
+
 
 ## 🧾 Logging Setup
 
@@ -67,5 +68,5 @@ Enable HTTP request logging for load balancer:
 ```lql
 resource.type="http_load_balancer"
 
-![Static Portfolio Website Architecture on Google Cloud - visual selection (2)](https://github.com/user-attachments/assets/d71487d6-355c-4e2a-8f7e-f4e45d660b63)
+
 
